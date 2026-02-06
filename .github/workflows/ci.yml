@@ -45,6 +45,9 @@ jobs:
         cache: 'npm'
         
     - name: Install & Build
+      env:
+        VITE_MAPS_API_KEY: ${{ secrets.VITE_MAPS_API_KEY }}
+        VITE_WEB3_FORM_ACCESS_KEY: ${{ secrets.VITE_WEB3_FORM_ACCESS_KEY }}
       run: |
         npm install
         npm run build

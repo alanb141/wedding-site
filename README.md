@@ -2,7 +2,11 @@
 
 A high-performance, lightweight single-page application developed to handle wedding details and RSVPs.
 
-**Live Site:** [alanavawedding.ie](https://alanavawedding.ie/?invite=TestGuest)(https://alanavawedding.ie/?invite=TestGuest_TestPlusOne)
+**Live Site:** 
+**Single guest**
+[alanavawedding.ie](https://alanavawedding.ie/?invite=TestGuest)
+**Guest with plus one**
+[alanavawedding.ie](https://alanavawedding.ie/?invite=TestGuest_TestPlusOne)
 
 ## Technical Strategy
 This project was deliberately architected **without a frontend framework** (like React or Vue) to prioritize mobile performance and ensure near-instant Load Contentful Paint (LCP) on slower 3G/4G networks.

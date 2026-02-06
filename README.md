@@ -1,3 +1,5 @@
+[![CI Pipeline](https://github.com/alanb141/wedding-site/actions/workflows/ci.yml/badge.svg)](https://github.com/alanb141/wedding-site/actions/workflows/ci.yml)
+
 # Wedding Invitation SPA
 
 A high-performance, lightweight single-page application developed to handle wedding details and RSVPs.

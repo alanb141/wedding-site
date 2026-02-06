@@ -1,4 +1,4 @@
-[![CI Pipeline](https://github.com/alanb141/wedding-site/actions/workflows/ci.yml/badge.svg)](https://github.com/alanb141/wedding-site/actions/workflows/ci.yml)
+[![CI/CD Pipeline](https://github.com/alanb141/wedding-site/actions/workflows/ci.yml/badge.svg)](https://github.com/alanb141/wedding-site/actions/workflows/ci.yml)
 
 # Wedding Invitation SPA
 

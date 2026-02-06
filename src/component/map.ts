@@ -7,6 +7,7 @@ export function initMap(containerId: string) {
     <div class="ceremony_location">
         <h2>Where is it happening?</h2>
         <p>Join us at the <strong>Great National Hotel</strong>, Ballina</p>
+        <p>If you plan to stay with the Great National Hotel, let them know that you are staying for Alan and Ava' wedding to get a special rate on the room.</p>
     </div>
     <div class="directions-form">
         <input id="origin-input" type="text" placeholder="Enter your location" />

@@ -5,6 +5,7 @@ import { Rsvp } from './component/rsvp';
 import { initMap } from './component/map';
 import { Activities } from './component/activities';
 import { Invite } from './component/invite';
+import { alternativeAccom } from './component/alternative';
 
 const app = document.querySelector<HTMLDivElement>('#app');
 if (app) {
@@ -13,6 +14,7 @@ if (app) {
   app.appendChild(Rsvp('rsvp_form'));
   app.appendChild(Activities("schedule"));
   app.appendChild(initMap('map'));
+  app.appendChild(alternativeAccom('alternative'));
 
   app.addEventListener('click', e => {
     const target = e.target as HTMLElement;

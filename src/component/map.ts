@@ -31,15 +31,17 @@ async function initGoogleMap() {
     const mapContainer = document.getElementById('weddingLocation');
     const originInput = document.getElementById('origin-input') as HTMLInputElement;
     const directionsBtn = document.getElementById('get-directions-btn');
-
-    const venueLocation = { lat: 54.08735451619732, lng: -9.16366842844462 };
+    
+    const venueLocation = { lat: 54.08697830637561, lng: -9.16583603131756 };
 
     if (mapContainer) {
         const map = new Map(mapContainer, {
             center: venueLocation,
             zoom: 14,
+            gestureHandling: 'greedy'
         });
 
+        // Directions
         const directionsRenderer = new DirectionsRenderer();
         directionsRenderer.setMap(map);
 

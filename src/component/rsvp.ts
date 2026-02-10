@@ -1,4 +1,5 @@
 import { getGuest } from "../utils/url";
+import { markAsSubmitted } from "../utils/storage";
 
 function syncRequiredFields (form: HTMLFormElement) {
     const checkboxes = form.querySelectorAll<HTMLInputElement>('input[type="checkbox"]');
@@ -125,7 +126,7 @@ export function Rsvp(containerId: string) {
 
             const data = await response.json();
             if (response.status === 200) {
-                localStorage.setItem(storageKey, invite_thanks);
+                markAsSubmitted(storageKey, invite_thanks);
                 container.innerHTML = `
                     <div id="invite_mask"></div>
                     <div id="success-box">

@@ -75,9 +75,10 @@ async function initGoogleMap() {
             }
             locationBtn.innerText = "⌛";
             navigator.geolocation.getCurrentPosition(position => {
+            console.log(position);
                 const userPos = {
                     lat: position.coords.latitude,
-                    lng: position.coords.latitude
+                    lng: position.coords.longitude
                 };
                 originInput.value = "My Location";
                 calculateRoute(userPos);

@@ -7,7 +7,7 @@ export function alternativeAccom(containerId: string) {
     <div class="alternative_location">
         <h2>Alternative places to stay</h2>
         <p>If the <strong>Great National Hotel</strong> is booked up or you would prefer somewhere closer to town, we have listed a couple of alternative hotels to stay. Please note, that there is no special rate when staying with any of these locations.</p>
-        <p>Alternative transport will also be needed to get to the Great National Hotel from any of these alternatives.</p>
+        <p>Alternative transport will also be needed to get to the Great National Hotel from any of these options.</p>
         <ul>
             <li>
                 <div>

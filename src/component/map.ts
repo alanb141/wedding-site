@@ -11,7 +11,10 @@ export function initMap(containerId: string) {
         <p>The hotel can be reached by phone on: (096) 23600</p>
     </div>
     <div class="directions-form">
-        <input id="origin-input" type="text" placeholder="Enter your location" />
+        <div class="directions-group">
+            <input id="origin-input" type="text" placeholder="Enter your location" />
+            <button id="use-location-btn" title="Use current location">📍</button>
+        </div>
         <div id="get-directions-btn">Get Directions</div>
     </div>
     <div>
@@ -31,6 +34,7 @@ async function initGoogleMap() {
     const mapContainer = document.getElementById('weddingLocation');
     const originInput = document.getElementById('origin-input') as HTMLInputElement;
     const directionsBtn = document.getElementById('get-directions-btn');
+    const locationBtn = document.getElementById('use-location-btn');
     
     const venueLocation = { lat: 54.08697830637561, lng: -9.16583603131756 };
 
@@ -47,26 +51,42 @@ async function initGoogleMap() {
 
         const directionsService = new DirectionsService();
 
-        if (directionsBtn && originInput) {
-            directionsBtn.addEventListener('click', () => {
-                const startLocation = originInput.value;
-                if (!startLocation) return;
-
-                directionsService.route(
-                    {
-                        origin: startLocation,
-                        destination: venueLocation,
-                        travelMode: google.maps.TravelMode.DRIVING,
-                    },
-                    (response, status) => {
-                        if (status === 'OK' && response) {
-                            directionsRenderer.setDirections(response);
-                        } else {
-                            window.alert("Directions request failed due to " + status)
-                        }
+        const calculateRoute = (origin: string | google.maps.LatLngLiteral) => {
+            directionsService.route(
+                {
+                    origin: origin,
+                    destination: venueLocation,
+                    travelMode: google.maps.TravelMode.DRIVING,
+                },
+                (response, status) => {
+                    if (status === 'OK' && response) {
+                        directionsRenderer.setDirections(response);
+                    } else {
+                        window.alert("Directions request failed due to " + status)
                     }
-                );
-            });
+                }
+            );
         }
+        directionsBtn?.addEventListener('click', () => calculateRoute(originInput.value));
+        locationBtn?.addEventListener('click', () => {
+            if(!navigator.geolocation) {
+                alert("Geolocation is not supported by your browser.");
+                return;
+            }
+            locationBtn.innerText = "⌛";
+            navigator.geolocation.getCurrentPosition(position => {
+                const userPos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.latitude
+                };
+                originInput.value = "My Location";
+                calculateRoute(userPos);
+                locationBtn.innerText = "📍";
+            },
+            () => {
+                alert("Unable to retrieve your location. Please type your address in manually.");
+                locationBtn.innerText = "📍";
+            });
+        });
     }
 }

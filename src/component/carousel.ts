@@ -3,8 +3,8 @@ import '@splidejs/splide/dist/css/splide-core.min.css'
 import { isMobile } from '../utils/device';
 
 function shuffleArray(array: string[]) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
+    for (let i = array.length - 1; i > 1; i--) {
+        const j = Math.floor(Math.random() * i) + 1;
         [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
@@ -27,12 +27,13 @@ export function Carousel(containerId: string) {
             query: '?url',
             import: 'default'
         });
+        const mainUrl = isMobile() ? '/assets/m1.webp' : '/assets/d1.webp';
         const chosenModules = isMobile() ? mobileModules : desktopModules;
         const defaultImageUrls = Object.values(chosenModules) as string[];
-        const imageUrls = shuffleArray([...defaultImageUrls]);
+        const filteredUrls = defaultImageUrls.filter(url => !url.includes('m1.webp') && !url.includes('d1.webp'));
+        const imageUrls = [mainUrl, ...shuffleArray([...filteredUrls])];
 
-
-        const hasSubmitted = !!localStorage.getItem(`guest_submitted`);;
+        const hasSubmitted = !!localStorage.getItem(`guest_submitted`);
 
         container.innerHTML = `
             <div class="carousel_msg">
@@ -45,8 +46,16 @@ export function Carousel(containerId: string) {
             <section class="splide">
                 <div class="splide__track">
                         <ul class="splide__list">
-                            ${imageUrls.map(url => `
-                                <li class="splide__slide"><img src="${url}" alt="Carousel Image" /></li>
+                            ${imageUrls.map((url, i) => `
+                                <li class="splide__slide">
+                                    <img
+                                        src="${url}"
+                                        alt="Carousel Image"
+                                        width=${isMobile() ? "721" : "1300" }
+                                        height=${isMobile() ? "1397" : "950" }
+                                        ${i === 0 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy"'}
+                                    />
+                                </li>
                             `).join('')}
                         </ul>
                 </div>
@@ -58,7 +67,6 @@ export function Carousel(containerId: string) {
                 new Splide(splideElement as HTMLElement, {
                     type: 'fade',
                     autoplay: true,
-                    lazyLoad: true,
                     interval: 4500,
                     arrows: false,
                     rewind: true,

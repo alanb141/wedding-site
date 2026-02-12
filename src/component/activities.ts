@@ -11,10 +11,10 @@ export function Activities(containerId: string) {
         <div class="wedding_ceremony">
             <h2>What to expect</h2>
             <ul>
-                <li><img src="${ceremonyImg}" alt="ceremony" /><span>13:30</span><p>Wedding Ceremony</p></li>
-                <li><img src="${receptionImg}" alt="reception" /><span>14:45</span><p>Drinks Reception</p></li>
-                <li><img src="${dinnerImg}" alt="dinner" /><span>17:00</span><p>Dinner</p></li>
-                <li><img src="${danceImg}" alt="dance" /><span>19:00</span><p>Party Starts</p></li>
+                <li><img src="${ceremonyImg}" alt="ceremony" width="64" height="64"/><span>13:30</span><p>Wedding Ceremony</p></li>
+                <li><img src="${receptionImg}" alt="reception" width="64" height="64"/><span>14:45</span><p>Drinks Reception</p></li>
+                <li><img src="${dinnerImg}" alt="dinner" width="64" height="64"/><span>17:00</span><p>Dinner</p></li>
+                <li><img src="${danceImg}" alt="dance" width="64" height="64"/><span>19:00</span><p>Party Starts</p></li>
             </ul>
         </div>
     `;

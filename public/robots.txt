@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Point to your sitemap
+Sitemap: https://alanavawedding.ie/sitemap.xml

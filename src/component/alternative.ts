@@ -16,7 +16,7 @@ export function alternativeAccom(containerId: string) {
                     <a class="altDirection" href="https://www.google.com/maps/dir/?api=1&destination=Diamond+Coast+Hotel,+Bartragh,+Enniscrone,+Co.+Sligo,+F26+E9F9" target="_blank">Directions</a>
                 </div>
             </li>
-            <hr>
+            <li><hr></li>
             <li>
                 <div>
                     <h3>Ballina Manor Hotel</h3>
@@ -24,7 +24,7 @@ export function alternativeAccom(containerId: string) {
                     <a class="altDirection" href="https://www.google.com/maps/dir/?api=1&destination=Ballina+Manor+Hotel,+Barrett+St,+Ballina,+Co.+Mayo,+F26+HY84" target="_blank">Directions</a>
                 </div>
             </li>
-            <hr>
+            <li><hr></li>
             <li>
                 <div>
                     <h3>The Moy Hotel</h3>

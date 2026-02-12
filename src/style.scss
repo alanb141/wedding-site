@@ -8,7 +8,8 @@ $form-color: #762506;
 
 @font-face {
   font-family: 'meaCulpa';
-  src: url('./assets/font/MeaCulpa-Regular.ttf') format('truetype'); 
+  src: url('/assets/font/MeaCulpa-Regular.woff2') format('woff2');
+  font-display: swap;
 }
 
 html, body, #app {
@@ -21,9 +22,9 @@ html, body, #app {
   h1{
     color:$text-color;
     padding: 1rem 0.5rem;
-    font-size: 7rem;
+    font-size: 6rem;
     @media (max-width: 767px) {
-      font-size: 5rem;
+      font-size: 4rem;
     }
   }
   h2 {
@@ -229,6 +230,7 @@ strong {
       gap: 0.2rem;
       font-size: 2rem;
       align-items: center;
+      flex-wrap: wrap;
     }
     span {
       background-color: $primary-color;
@@ -277,17 +279,18 @@ strong {
   .splide {
     height: 950px;
     overflow: hidden;
-    ul{
-      margin-top: -75px !important;
-    }
+    display: flex;
+    align-items: center;
     &__slide {
       text-align: center;
       img {
         max-width: 100%;
+        height: auto;
       }
     }
     @media (max-width: 767px) {
-      height: 550px;
+      height: 650px;
+      box-sizing: border-box;
     }
   }
 }
@@ -310,6 +313,9 @@ strong {
     gap: 2rem;
     hr {
       color: $secondary-color;
+      @media (min-width: 768px) {
+        height: 75%;
+      }
     }
     @media (max-width: 767px) {
       flex-direction: column;

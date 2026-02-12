@@ -52,6 +52,13 @@ jobs:
         npm install
         npm run build
 
+    - name: Lighthouse Audit
+      run: |
+        npm install -g @lhci/cli@0.13.x
+        lhci autorun
+      env: 
+        LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:

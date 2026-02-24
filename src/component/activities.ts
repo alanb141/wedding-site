@@ -1,7 +1,7 @@
-import ceremonyImg from '../assets/images/rings_light.png';
-import receptionImg from '../assets/images/cheers_light.png';
-import dinnerImg from '../assets/images/dinner_light.png';
-import danceImg from '../assets/images/dance_light.png';
+import ceremonyImg from '../assets/images/rings_light.webp';
+import receptionImg from '../assets/images/cheers_light.webp';
+import dinnerImg from '../assets/images/dinner_light.webp';
+import danceImg from '../assets/images/dance_light.webp';
 
 export function Activities(containerId: string) {
     const container = document.createElement('div');

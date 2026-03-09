@@ -66,9 +66,6 @@ strong {
     @media (min-width: 768px) {
       align-items: center;
     }
-    @media (max-width: 767px) {
-      padding-top: 2rem;
-    }
   }
   &.form_closed {
     display: none;
@@ -96,9 +93,9 @@ strong {
     2px -2px 10px $text-color, 
     -2px 2px 10px $text-color;
     @media (max-width: 767px) {
-      max-width: 95%;
-      max-height: 75%;
       background-size: cover;
+      background-position: top;
+      height: 100dvh;
     }
     h2 {
       margin-top: 6rem;

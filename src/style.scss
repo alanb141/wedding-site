@@ -98,7 +98,7 @@ strong {
     @media (max-width: 767px) {
       max-width: 95%;
       max-height: 75%;
-      width: 450px;
+      background-size: cover;
     }
     h2 {
       margin-top: 6rem;
@@ -147,11 +147,6 @@ strong {
         button {
           margin: 1rem auto;
         }
-      }
-      @media (max-width: 454px) {
-        max-height: 335px;
-        overflow-y: auto;
-        scrollbar-color: rebeccapurple green;
       }
     }
   }
